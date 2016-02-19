@@ -1,0 +1,124 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,700);
+
+body {
+   /*propertyName: value; */
+   /* louise@madebymilk.io*/
+  /* font family allows us to add multiple fallback fonts to our page, in ordr of preference */
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 16px;
+  /* line-height is relative to font size - e.g. 1.8 times 16px */
+  line-height: 1.8;
+  /* use text-align to align text and images only */
+  text-align: center;
+  background-color: #d4d4d4;
+  /* color always sets the text colour */
+  color: #585858;
+}
+
+header {
+  /*Aim: to get the logo into the middle of the header & show a background image*/
+/* padding pushed content away from the inside edges of the box. Padding increases the size of the box and takes 4 values: top, right, bottom and left. When inputting 0, do not put as px as will break the CSS*/
+  padding: 200px 0 200px 0;
+  /* .. takes you one file up */
+background-image: url(../images/splash.jpg);
+/* background position allows us to move the image around in the header. It looks at the x and y - horizontal and vertical - alignment of the image e.g. centre, top, bottom, left, right. We wnat to see the bottom half of the image to allow us to see the logo better */
+background-position: center bottom;
+/* background repeat to turn on or off image tiling */
+background-repeat: no-repeat;
+/* background-size allows you to add size rules to backgorund images. Cover keeps it pinned to the designated size and fill the screen no matter what size you zoom in or out to. cover is a new feature, with any features used, it is best to check on 'caniuse.com' to see browser coverage */
+background-size: cover;
+}
+
+nav {
+  padding: 20px 0 20px 0;
+  background-color: #ffda0d;
+}
+
+/* to style anchor tags/links inside of the nav tag only */
+nav a {
+  /* to capitalise everything */
+  text-transform: uppercase;
+  /* to make the text bold - either 'bold' or look to the top text style if @imported to see what number to use for light, normal or bold*/
+  font-weight: 700;
+   /* to make the text colour changes */
+   color: #444444;
+   /* to get rid of underlines */
+   text-decoration: none;
+   /* to space out the nav text - use padding rather than margin as is mobile firendly as allows box to expand beyond the text making the hit area bigger. Margin would increase space outside of it making it harder to click on a mobile device */
+   padding: 0 20px 0 20px;
+}
+
+/* whenever you see a colon after an element it shows it is applying a different state e.g. hover when you hover the mouse over the text or image */
+nav a:hover {
+  text-decoration: underline;
+  color: #585858;
+}
+
+section {
+  /* max-width is more useful than width as it allows sections to be the specified width at maximum, but also allows the section to shrink dynamically on smaller screen sizes */
+  max-width: 720px;
+  background-color: #ffffff;
+
+  /* elements on our page have default display properties. They are either inline or block. Inline elements like text, images and anchor tags sit on one line together as far as there is room. These can be centrally aligned using text-align: centre. Block elements stack on top of one another like bricks and can only be centrally aligned using margin: 0 auto */
+  /* auto makes sure that the margin on either side of the section is the same no matter the width of the browser/device */
+  /* learnlayout.com for help on the block level vs inline level elements of a page design */
+  margin: 0 auto 0 auto;
+
+  /* if the padding is the same on all size you only need to put the value once and it will apply it to all sides. This would also apply to 0 auto above. It is only applicable when sizes are repeated */
+  padding: 40px;
+}
+
+h2 {
+  font-size: 35px;
+  margin-top: 40px;
+  text-transform: uppercase;
+}
+
+
+h3 {
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  color: #a3a3a3;
+}
+
+/* can apply styles to multiple elements at once by adding them in and seperating with a comma, rather than repeating the same styles several times */
+p, blockquote {
+  font-size: 22px;
+  font-weight: 300;
+  margin: 20px 0;
+}
+
+footer {
+  background-color: #ffda0d;
+  padding: 40px 0;
+}
+
+/* to make an inline element like text or small stack like a block, you can change its properites using the display: function and change to a block so that it stacks under/above other inline elements */
+small {
+display:block;
+margin-top: 20px;
+}
+
+/* class names start with a dot. followed by the class name rather than 'class'. A # start identifies an ID e.g. id="yellow-quote" in html would be #yellow-quote in the CSS, similar to a class but can only be applied once to one element, while a class can be used multiple times */
+.quote {
+  background-color: #ffda0d;
+}
+
+/* Media Queries - links to the meta name="viewport" content="width=device-width" line in the HTML sheet */
+@media screen and (max-width: 720px) {
+  /* Stop the images and the iframes breaking the layout by being larger than the section width */
+  img, iframe {
+    /* can apply a max-width to images and iframes as a % rather than a pixel size of their parent containers (i.e. the sections they are sitting insode of) */
+    max-width: 100%;
+      }
+
+/* Reduce the padding inside the header for smaller screen sizes */
+header {
+  padding: 100px 20px;
+}
+
+/* Make the ancor tags stack one on top of another to create a mobile menu */
+nav a {
+  display: block;
+}
+}
